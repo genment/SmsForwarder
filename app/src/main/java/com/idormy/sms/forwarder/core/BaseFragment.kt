@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.idormy.sms.forwarder.App
 import com.idormy.sms.forwarder.core.http.loader.ProgressLoader
-import com.umeng.analytics.MobclickAgent
 import com.xuexiang.xhttp2.subsciber.impl.IProgressLoader
 import com.xuexiang.xpage.base.XPageActivity
 import com.xuexiang.xpage.base.XPageFragment
@@ -130,15 +129,6 @@ abstract class BaseFragment<Binding : ViewBinding?> : XPageFragment() {
         binding = null
     }
 
-    override fun onResume() {
-        super.onResume()
-        MobclickAgent.onPageStart(pageName)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        MobclickAgent.onPageEnd(pageName)
-    }
     //==============================页面跳转api===================================//
     /**
      * 打开一个新的页面【建议只在主tab页使用】

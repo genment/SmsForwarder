@@ -111,21 +111,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             if (isNeedPackage.toBoolean()) {
                 signingConfig signingConfigs.release
-                if (file('local.properties').exists()) {
-                    Properties properties = new Properties()
-                    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-                    def appID = properties.getProperty("APP_ID_UMENG")
-                    if (appID != null) {
-                        buildConfigField "String", "APP_ID_UMENG", appID
-                    } else {
-                        buildConfigField "String", "APP_ID_UMENG", '"60254fc7425ec25f10f4293e"'
-                    }
-                } else {
-                    buildConfigField "String", "APP_ID_UMENG", '"60254fc7425ec25f10f4293e"'
-                }
             } else {
                 signingConfig signingConfigs.debug
-                buildConfigField "String", "APP_ID_UMENG", '"60254fc7425ec25f10f4293e"'
             }
         }
         debug {
@@ -140,21 +127,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             if (isNeedPackage.toBoolean()) {
                 signingConfig signingConfigs.release
-                if (file('local.properties').exists()) {
-                    Properties properties = new Properties()
-                    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-                    def appID = properties.getProperty("APP_ID_UMENG")
-                    if (appID != null) {
-                        buildConfigField "String", "APP_ID_UMENG", appID
-                    } else {
-                        buildConfigField "String", "APP_ID_UMENG", '"60254fc7425ec25f10f4293e"'
-                    }
-                } else {
-                    buildConfigField "String", "APP_ID_UMENG", '"60254fc7425ec25f10f4293e"'
-                }
             } else {
                 signingConfig signingConfigs.debug
-                buildConfigField "String", "APP_ID_UMENG", '"60254fc7425ec25f10f4293e"'
             }
         }
     }
@@ -284,9 +258,6 @@ dependencies {
     implementation 'com.github.xuexiangjys.AgentWeb:agentweb-download:1.0.1'//选填
     //屏幕适配AutoSize：https://github.com/JessYanCoding/AndroidAutoSize
     implementation 'me.jessyan:autosize:1.2.1'
-    //友盟统计
-    implementation 'com.umeng.umsdk:common:9.6.8'
-    implementation 'com.umeng.umsdk:asms:1.8.2'
 
     //预加载占位控件
     implementation 'me.samlss:broccoli:1.0.0'

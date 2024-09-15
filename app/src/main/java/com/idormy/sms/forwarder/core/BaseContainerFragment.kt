@@ -4,7 +4,6 @@ import android.content.res.Configuration
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import com.umeng.analytics.MobclickAgent
 import com.xuexiang.xaop.annotation.SingleClick
 import com.xuexiang.xpage.base.XPageContainerListFragment
 import com.xuexiang.xui.widget.actionbar.TitleBar
@@ -73,15 +72,5 @@ abstract class BaseContainerFragment : XPageContainerListFragment() {
             root.removeViewAt(0)
             initTitle()
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        MobclickAgent.onPageStart(pageName)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        MobclickAgent.onPageEnd(pageName)
     }
 }

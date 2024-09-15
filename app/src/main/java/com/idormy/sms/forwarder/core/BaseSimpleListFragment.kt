@@ -4,7 +4,6 @@ import android.content.res.Configuration
 import android.os.Parcelable
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.umeng.analytics.MobclickAgent
 import com.xuexiang.xpage.base.XPageActivity
 import com.xuexiang.xpage.base.XPageFragment
 import com.xuexiang.xpage.base.XPageSimpleListFragment
@@ -45,15 +44,6 @@ abstract class BaseSimpleListFragment : XPageSimpleListFragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        MobclickAgent.onPageStart(pageName)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        MobclickAgent.onPageEnd(pageName)
-    }
     //==============================页面跳转api===================================//
     /**
      * 打开一个新的页面【建议只在主tab页使用】
