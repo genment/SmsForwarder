@@ -293,10 +293,6 @@ dependencies {
     //LiveEventBus：https://github.com/JeremyLiao/LiveEventBus
     implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
 
-    //MarkdownView：https://github.com/tiagohm/MarkdownView
-    implementation 'com.github.tiagohm.MarkdownView:library:0.19.0'
-    //implementation 'com.github.tiagohm.MarkdownView:emoji:0.19.0'
-
     def retrofit2_version = '2.9.0'
     //noinspection GradleDependency
     implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"

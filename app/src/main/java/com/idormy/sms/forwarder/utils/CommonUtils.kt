@@ -19,10 +19,7 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import com.idormy.sms.forwarder.App
 import com.idormy.sms.forwarder.R
-import com.idormy.sms.forwarder.core.webview.AgentWebActivity
-import com.idormy.sms.forwarder.core.webview.AgentWebFragment
 import com.idormy.sms.forwarder.entity.ImageInfo
-import com.idormy.sms.forwarder.fragment.MarkdownFragment
 import com.idormy.sms.forwarder.fragment.ServiceProtocolFragment
 import com.idormy.sms.forwarder.service.NotificationService
 import com.xuexiang.xpage.base.XPageFragment
@@ -116,22 +113,10 @@ class CommonUtils private constructor() {
             val spannableString = SpannableString(privacyName)
             spannableString.setSpan(object : ClickableSpan() {
                 override fun onClick(widget: View) {
-                    goWeb(context, privacyUrl)
+                    XToastUtils.info("Removed function")
                 }
             }, 0, privacyName.length, Spanned.SPAN_MARK_MARK)
             return spannableString
-        }
-
-        /**
-         * 请求浏览器
-         *
-         * @param url
-         */
-        @JvmStatic
-        fun goWeb(context: Context, url: String?) {
-            val intent = Intent(context, AgentWebActivity::class.java)
-            intent.putExtra(AgentWebFragment.KEY_URL, url)
-            context.startActivity(intent)
         }
 
         /**
@@ -193,18 +178,6 @@ class CommonUtils private constructor() {
             val bounds = Rect()
             view?.getGlobalVisibleRect(bounds)
             PreviewBuilder.from(fragment).setImgs(ImageInfo.newInstance(url, bounds)).setCurrentIndex(0).setSingleFling(true).setProgressColor(R.color.xui_config_color_main_theme).setType(PreviewBuilder.IndicatorType.Number).start()
-        }
-
-        /**
-         * 打开Markdown链接并渲染
-         *
-         * @param fragment
-         * @param url   Markdown链接
-         * @param isImmersive 是否沉浸式
-         */
-        @JvmStatic
-        fun previewMarkdown(fragment: XPageFragment?, title: String, url: String, isImmersive: Boolean) {
-            PageOption.to(MarkdownFragment::class.java).putString(MarkdownFragment.KEY_MD_TITLE, title).putString(MarkdownFragment.KEY_MD_URL, url).putBoolean(MarkdownFragment.KEY_IS_IMMERSIVE, isImmersive).open(fragment!!)
         }
 
         //检查自定义模板中的标签是否合法

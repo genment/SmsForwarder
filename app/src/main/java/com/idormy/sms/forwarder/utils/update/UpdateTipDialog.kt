@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.idormy.sms.forwarder.R
-import com.idormy.sms.forwarder.utils.CommonUtils.Companion.goWeb
+import com.idormy.sms.forwarder.utils.XToastUtils
 import com.xuexiang.xui.widget.dialog.DialogLoader
 import com.xuexiang.xupdate.XUpdate
 
@@ -25,8 +25,8 @@ class UpdateTipDialog : AppCompatActivity(), DialogInterface.OnDismissListener {
         }
         DialogLoader.getInstance()
             .showConfirmDialog(this, content, getString(R.string.yes), { dialog: DialogInterface, _: Int ->
+                XToastUtils.info("Removed function")
                 dialog.dismiss()
-                goWeb(this@UpdateTipDialog, DOWNLOAD_URL)
             }, getString(R.string.no))
             .setOnDismissListener(this)
     }

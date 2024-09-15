@@ -202,13 +202,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/DialogTheme"
             tools:ignore="DiscouragedApi" />
-        <!-- Webview拦截提示弹窗-->
-        <activity
-            android:name=".core.webview.WebViewInterceptDialog"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/DialogTheme"
-            tools:ignore="DiscouragedApi" />
         <!-- applink的中转页面 -->
         <activity
             android:name=".core.XPageTransferActivity"

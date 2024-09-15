@@ -7,12 +7,10 @@ import com.idormy.sms.forwarder.App
 import com.idormy.sms.forwarder.BuildConfig
 import com.idormy.sms.forwarder.R
 import com.idormy.sms.forwarder.core.BaseFragment
-import com.idormy.sms.forwarder.core.webview.AgentWebActivity
 import com.idormy.sms.forwarder.databinding.FragmentAboutBinding
 import com.idormy.sms.forwarder.utils.AppUtils
 import com.idormy.sms.forwarder.utils.CacheUtils
 import com.idormy.sms.forwarder.utils.CommonUtils.Companion.gotoProtocol
-import com.idormy.sms.forwarder.utils.CommonUtils.Companion.previewMarkdown
 import com.idormy.sms.forwarder.utils.CommonUtils.Companion.previewPicture
 import com.idormy.sms.forwarder.utils.CommonUtils.Companion.restartApplication
 import com.idormy.sms.forwarder.utils.HistoryUtils
@@ -110,10 +108,10 @@ class AboutFragment : BaseFragment<FragmentAboutBinding?>(), SuperTextView.OnSup
             }
         }
         binding!!.btnGithub.setOnClickListener {
-            AgentWebActivity.goWeb(context, getString(R.string.url_project_github))
+            XToastUtils.info("Removed function")
         }
         binding!!.btnGitee.setOnClickListener {
-            AgentWebActivity.goWeb(context, getString(R.string.url_project_gitee))
+            XToastUtils.info("Removed function")
         }
 
         binding!!.menuJoinPreviewProgram.setOnSuperTextViewClickListener(this)
@@ -144,7 +142,7 @@ class AboutFragment : BaseFragment<FragmentAboutBinding?>(), SuperTextView.OnSup
             }
 
             R.id.menu_donation -> {
-                previewMarkdown(this, getString(R.string.about_item_donation_link), getString(R.string.url_donation_link), false)
+                XToastUtils.info("Removed function")
             }
 
             R.id.menu_wechat_miniprogram -> {

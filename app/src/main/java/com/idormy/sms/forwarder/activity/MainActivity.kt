@@ -23,7 +23,6 @@ import com.idormy.sms.forwarder.adapter.menu.DrawerItem
 import com.idormy.sms.forwarder.adapter.menu.SimpleItem
 import com.idormy.sms.forwarder.adapter.menu.SpaceItem
 import com.idormy.sms.forwarder.core.BaseActivity
-import com.idormy.sms.forwarder.core.webview.AgentWebActivity
 import com.idormy.sms.forwarder.databinding.ActivityMainBinding
 import com.idormy.sms.forwarder.fragment.AboutFragment
 import com.idormy.sms.forwarder.fragment.AppListFragment
@@ -312,7 +311,7 @@ class MainActivity : BaseActivity<ActivityMainBinding?>(), DrawerAdapter.OnItemS
                 openNewPage(AppListFragment::class.java)
             }
 
-            POS_HELP -> AgentWebActivity.goWeb(this, getString(R.string.url_help))
+            POS_HELP -> XToastUtils.info("Removed function")
             POS_ABOUT -> openNewPage(AboutFragment::class.java)
         }
     }
