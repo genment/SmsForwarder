@@ -152,6 +152,7 @@ class WebhookUtils {
                         val format = it.groups[2]?.value
                         formatDateTime(msgInfo.date, format)
                     }
+                    .replace("[receive_timestamp]", msgInfo.date.time.toString())
                     .replace("[timestamp]", timestamp.toString())
                     .replace("[sign]", sign)
                 Log.d(TAG, "method = ${setting.method}, Url = $requestUrl, bodyMsg = $bodyMsg")
