@@ -120,11 +120,11 @@ android {
             debuggable true
             jniDebuggable true
             // 移除无用的资源
-            shrinkResources true
+            shrinkResources false
             // 代码混淆开关
-            minifyEnabled true
+            minifyEnabled false
             // 混淆配置
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             if (isNeedPackage.toBoolean()) {
                 signingConfig signingConfigs.release
             } else {
@@ -356,8 +356,6 @@ dependencies {
 }
 //自动添加X-Library依赖
 apply from: 'x-library.gradle'
-//walle多渠道打包
-//apply from: 'multiple-channel.gradle'
 
 //获取 commit ID
 static def getGitCommitId() {
