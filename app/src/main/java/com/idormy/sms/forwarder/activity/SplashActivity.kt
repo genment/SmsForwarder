@@ -3,13 +3,9 @@ package com.idormy.sms.forwarder.activity
 import android.annotation.SuppressLint
 import android.view.KeyEvent
 import com.idormy.sms.forwarder.R
-import com.idormy.sms.forwarder.utils.CommonUtils.Companion.showPrivacyDialog
 import com.idormy.sms.forwarder.utils.SettingUtils
-import com.idormy.sms.forwarder.utils.SettingUtils.Companion.isAgreePrivacy
 import com.xuexiang.xui.utils.KeyboardUtils
 import com.xuexiang.xui.widget.activity.BaseSplashActivity
-import com.xuexiang.xui.widget.dialog.materialdialog.DialogAction
-import com.xuexiang.xui.widget.dialog.materialdialog.MaterialDialog
 import com.xuexiang.xutil.app.ActivityUtils
 import me.jessyan.autosize.internal.CancelAdapt
 
@@ -35,15 +31,7 @@ class SplashActivity : BaseSplashActivity(), CancelAdapt {
      * 启动页结束后的动作
      */
     override fun onSplashFinished() {
-        if (isAgreePrivacy) {
-            whereToJump()
-        } else {
-            showPrivacyDialog(this) { dialog: MaterialDialog, _: DialogAction? ->
-                dialog.dismiss()
-                isAgreePrivacy = true
-                whereToJump()
-            }
-        }
+        whereToJump()
     }
 
     private fun whereToJump() {

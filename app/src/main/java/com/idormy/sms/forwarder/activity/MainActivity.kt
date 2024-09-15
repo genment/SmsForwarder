@@ -44,7 +44,6 @@ import com.idormy.sms.forwarder.utils.Log
 import com.idormy.sms.forwarder.utils.SettingUtils
 import com.idormy.sms.forwarder.utils.XToastUtils
 import com.idormy.sms.forwarder.utils.sdkinit.XUpdateInit
-import com.idormy.sms.forwarder.widget.GuideTipsDialog.Companion.showTips
 import com.idormy.sms.forwarder.workers.LoadAppListWorker
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.xuexiang.xhttp2.XHttp
@@ -177,7 +176,6 @@ class MainActivity : BaseActivity<ActivityMainBinding?>(), DrawerAdapter.OnItemS
 
         //仅当开启自动检查且有网络时自动检查更新/获取提示
         if (SettingUtils.autoCheckUpdate && NetworkUtils.isHaveInternet()) {
-            showTips(this)
             XUpdateInit.checkUpdate(this, false, SettingUtils.joinPreviewProgram)
         }
     }

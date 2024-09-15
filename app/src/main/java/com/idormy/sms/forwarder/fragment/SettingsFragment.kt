@@ -63,7 +63,6 @@ import com.idormy.sms.forwarder.utils.Log
 import com.idormy.sms.forwarder.utils.PhoneUtils
 import com.idormy.sms.forwarder.utils.SettingUtils
 import com.idormy.sms.forwarder.utils.XToastUtils
-import com.idormy.sms.forwarder.widget.GuideTipsDialog
 import com.idormy.sms.forwarder.workers.LoadAppListWorker
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.xuexiang.xaop.annotation.SingleClick
@@ -114,7 +113,7 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding?>(), View.OnClickL
         titleBar!!.addAction(object : TitleBar.ImageAction(R.drawable.ic_menu_notifications_white) {
             @SingleClick
             override fun performAction(view: View) {
-                GuideTipsDialog.showTipsForce(requireContext())
+                XToastUtils.info("Removed function")
             }
         })
         titleBar!!.addAction(object : TitleBar.ImageAction(R.drawable.ic_restore) {
