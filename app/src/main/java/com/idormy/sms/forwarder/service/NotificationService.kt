@@ -91,7 +91,7 @@ class NotificationService : NotificationListenerService() {
             //不处理空消息（标题跟内容都为空）
             if (TextUtils.isEmpty(title) && TextUtils.isEmpty(text)) return
 
-            val msgInfo = MsgInfo("app", from, text, Date(), title, -1)
+            val msgInfo = MsgInfo("app", from, text, Date(sbn.postTime), title, -1)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 Log.d(TAG, "消息的UID====>" + sbn.uid)
                 msgInfo.uid = sbn.uid
