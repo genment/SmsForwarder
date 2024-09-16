@@ -44,7 +44,7 @@ interface RuleDao {
     fun count(type: String, status: Int): Single<Int>
 
     @Transaction
-    @Query("SELECT * FROM Rule where type=:type ORDER BY id DESC")
+    @Query("SELECT * FROM Rule where type=:type ORDER BY id")
     fun pagingSource(type: String): PagingSource<Int, Rule>
 
     @Transaction

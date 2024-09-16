@@ -50,7 +50,7 @@ interface SenderDao {
     @Query("SELECT count(*) FROM Sender where type=:type and status=:status")
     fun count(type: String, status: Int): Single<Int>
 
-    @Query("SELECT * FROM Sender where status=:status ORDER BY id DESC")
+    @Query("SELECT * FROM Sender where status=:status ORDER BY id")
     fun pagingSource(status: Int): PagingSource<Int, Sender>
 
     @Query("SELECT * FROM Sender ORDER BY id DESC")
