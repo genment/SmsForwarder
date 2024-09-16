@@ -57,7 +57,7 @@ class LogsFragment : BaseFragment<FragmentLogsBinding?>(), MsgPagingAdapter.OnIt
     private var titleBar: TitleBar? = null
     private var adapter = MsgPagingAdapter(this)
     private val viewModel by viewModels<MsgViewModel> { BaseViewModelFactory(context) }
-    private var currentType: String = "sms"
+    private var currentType: String = "app"
 
     //日志筛选
     private var currentFilter: MutableMap<String, Any> = mutableMapOf()
@@ -125,9 +125,9 @@ class LogsFragment : BaseFragment<FragmentLogsBinding?>(), MsgPagingAdapter.OnIt
         binding!!.tabBar.setOnTabClickListener { _, position ->
             //XToastUtils.toast("点击了$title--$position")
             currentType = when (position) {
-                1 -> "call"
-                2 -> "app"
-                else -> "sms"
+                0 -> "app"
+                1 -> "sms"
+                else -> "call" // 2
             }
             initLogsFilterDialog(true)
             reloadData()

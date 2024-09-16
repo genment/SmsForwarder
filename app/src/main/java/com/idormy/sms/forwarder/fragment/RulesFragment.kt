@@ -38,7 +38,7 @@ class RulesFragment : BaseFragment<FragmentRulesBinding?>(), RulePagingAdapter.O
     private var adapter = RulePagingAdapter(this)
     private var titleBar: TitleBar? = null
     private val viewModel by viewModels<RuleViewModel> { BaseViewModelFactory(context) }
-    private var currentType: String = "sms"
+    private var currentType: String = "app"
 
     override fun viewBindingInflate(
         inflater: LayoutInflater,
@@ -82,9 +82,9 @@ class RulesFragment : BaseFragment<FragmentRulesBinding?>(), RulePagingAdapter.O
         binding!!.tabBar.setOnTabClickListener { _, position ->
             //XToastUtils.toast("点击了$title--$position")
             currentType = when (position) {
-                1 -> "call"
-                2 -> "app"
-                else -> "sms"
+                0 -> "app"
+                1 -> "sms"
+                else -> "call" // 2
             }
             viewModel.setType(currentType)
             adapter.refresh()

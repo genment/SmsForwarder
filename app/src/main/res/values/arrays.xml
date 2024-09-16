@@ -68,9 +68,9 @@
 
     <!--转发分类-->
     <string-array name="type_param_option">
+        <item>@string/type_param_app</item>
         <item>@string/type_param_sms</item>
         <item>@string/type_param_call</item>
-        <item>@string/type_param_app</item>
     </string-array>
 
     <!--启用状态-->
