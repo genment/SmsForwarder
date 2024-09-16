@@ -53,7 +53,6 @@ import com.idormy.sms.forwarder.utils.Log
 import com.idormy.sms.forwarder.utils.SettingUtils
 import com.idormy.sms.forwarder.utils.SharedPreference
 import com.idormy.sms.forwarder.utils.sdkinit.XBasicLibInit
-import com.idormy.sms.forwarder.utils.sdkinit.XUpdateInit
 import com.idormy.sms.forwarder.utils.tinker.TinkerLoadLibrary
 import com.king.location.LocationClient
 import com.xuexiang.xutil.file.FileUtils
@@ -323,8 +322,6 @@ class App : Application(), CactusCallback, Configuration.Provider by Core {
         Log.init(applicationContext)
         // 转发历史工具类初始化
         HistoryUtils.init(applicationContext)
-        // 版本更新初始化
-        XUpdateInit.init(this)
         // 初始化语种切换框架
         MultiLanguages.init(this)
         // 设置语种变化监听器

@@ -19,8 +19,6 @@ configurations.each { configuration ->
         configuration.dependencies.add(dependencies.create(deps.xlibrary.xutil_sub))
         //XAOP切片
         configuration.dependencies.add(dependencies.create(deps.xlibrary.xaop_runtime))
-        //XUpdate版本更新
-        configuration.dependencies.add(dependencies.create(deps.xlibrary.xupdate))
         //XHttp2
         configuration.dependencies.add(dependencies.create(deps.xlibrary.xhttp2))
         configuration.dependencies.add(dependencies.create(deps.rxjava2))
